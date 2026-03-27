@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#3d1800" />
+  <title>Happy 20th Birthday 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;700&family=Pacifico&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- CONFETTI CANVAS -->
+  <canvas id="confetti"></canvas>
+
+  <!-- ══ BACKGROUND ══ -->
+  <div class="scene-bg" id="sceneBg"></div>
+
+  <!-- ══════════════════════════════════════════
+       START OVERLAY
+  ══════════════════════════════════════════ -->
+  <div id="startOverlay">
+    <div class="so-inner">
+      <div class="so-balloons">🎈🎀🎈🎀🎈</div>
+      <div class="so-gift">🎁</div>
+      <h1 class="so-title">Someone made something<br><span>just for you…</span></h1>
+      <p class="so-sub">A little album full of memories &amp; love 💕</p>
+      <button id="openBtn" aria-label="Open album">
+        <span>📖</span> Open Your Surprise
+      </button>
+      <p class="so-hint">🎵 Turn volume on for the full experience</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       ALBUM SCENE
+  ══════════════════════════════════════════ -->
+  <div id="albumScene" class="hidden">
+
+    <div class="floating-bits" id="floatingBits" aria-hidden="true"></div>
+
+    <!-- Age banner -->
+    <p class="age-banner">🎂 Happy 20th Birthday! 🎂</p>
+
+    <!-- Page counter -->
+    <div class="pg-counter" id="pgCounter">1 / 17</div>
+
+    <!-- ══ BOOK WRAPPER ══ -->
+    <div class="book-wrap">
+      <div class="book" id="book">
+
+        <!-- PAGE 0 — FRONT COVER + back -->
+        <div class="page" id="p0">
+          <div class="face front cover-face">
+            <div class="spiral" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="cover-body">
+              <div class="cd cd1">🎈</div>
+              <div class="cd cd2">⭐</div>
+              <div class="cd cd3">🎀</div>
+              <div class="cd cd4">💛</div>
+              <div class="cd cd5">🎉</div>
+              <div class="cd cd6">🌟</div>
+              <div class="cover-card">
+                <div class="ribbon top"></div>
+                <div class="cv-badge">20</div>
+                <h1 class="cv-birthday">Birthday</h1>
+                <h2 class="cv-memories">Memories</h2>
+                <span class="cv-hat">🎂</span>
+                <div class="ribbon bottom"></div>
+              </div>
+              <div class="cc tl"></div>
+              <div class="cc tr"></div>
+              <div class="cc bl"></div>
+              <div class="cc br"></div>
+            </div>
+          </div>
+          <!-- Left side blank -->
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 1 -->
+        <div class="page" id="p1">
+          <div class="face front photo-face">
+            <div class="photo-slot"><img src="images/image1.jpeg" alt="Memory" style="object-position: 72% center;"
+                onerror="this.src='';this.parentElement.innerHTML='<span class=\'ph-cam\'>📷</span><p>Your Photo Here</p>'">
+            </div>
+            <div class="emoji-bar"><span class="page-emoji">🌸</span></div>
+          </div>
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 2 -->
+        <div class="page" id="p2">
+          <div class="face front photo-face">
+            <div class="photo-slot"><img src="images/image2.jpeg" alt="Memory"
+                onerror="this.src='';this.parentElement.innerHTML='<span class=\'ph-cam\'>📷</span><p>Your Photo Here</p>'">
+            </div>
+            <div class="emoji-bar"><span class="page-emoji">✨</span></div>
+          </div>
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 3 -->
+        <div class="page" id="p3">
+          <div class="face front photo-face">
+            <div class="photo-slot"><img src="images/image3.jpeg" alt="Memory"
+                onerror="this.src='';this.parentElement.innerHTML='<span class=\'ph-cam\'>📷</span><p>Your Photo Here</p>'">
+            </div>
+            <div class="emoji-bar"><span class="page-emoji">🎀</span></div>
+          </div>
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 4 -->
+        <div class="page" id="p4">
+          <div class="face front photo-face">
+            <div class="photo-slot"><img src="images/image4.jpeg" alt="Memory"
+                onerror="this.src='';this.parentElement.innerHTML='<span class=\'ph-cam\'>📷</span><p>Your Photo Here</p>'">
+            </div>
+            <div class="emoji-bar"><span class="page-emoji">🌟</span></div>
+          </div>
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 5 -->
+        <div class="page" id="p5">
+          <div class="face front photo-face">
+            <div class="photo-slot"><img src="images/image5.jpeg" alt="Memory"
+                onerror="this.src='';this.parentElement.innerHTML='<span class=\'ph-cam\'>📷</span><p>Your Photo Here</p>'">
+            </div>
+            <div class="emoji-bar"><span class="page-emoji">💜</span></div>
+          </div>
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 6 -->
+        <div class="page" id="p6">
+          <div class="face front photo-face">
+            <div class="photo-slot"><img src="images/image6.jpeg" alt="Memory"
+                onerror="this.src='';this.parentElement.innerHTML='<span class=\'ph-cam\'>📷</span><p>Your Photo Here</p>'">
+            </div>
+            <div class="emoji-bar"><span class="page-emoji">🌺</span></div>
+          </div>
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 7 -->
+        <div class="page" id="p7">
+          <div class="face front photo-face">
+            <div class="photo-slot"><img src="images/image7.jpeg" alt="Memory"
+                onerror="this.src='';this.parentElement.innerHTML='<span class=\'ph-cam\'>📷</span><p>Your Photo Here</p>'">
+            </div>
+            <div class="emoji-bar"><span class="page-emoji">💫</span></div>
+          </div>
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 8 -->
+        <div class="page" id="p8">
+          <div class="face front photo-face">
+            <div class="photo-slot"><img src="images/image8.jpeg" alt="Memory"
+                onerror="this.src='';this.parentElement.innerHTML='<span class=\'ph-cam\'>📷</span><p>Your Photo Here</p>'">
+            </div>
+            <div class="emoji-bar"><span class="page-emoji">🎉</span></div>
+          </div>
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 9 -->
+        <div class="page" id="p9">
+          <div class="face front photo-face">
+            <div class="photo-slot"><img src="images/image9.jpeg" alt="Memory"
+                onerror="this.src='';this.parentElement.innerHTML='<span class=\'ph-cam\'>📷</span><p>Your Photo Here</p>'">
+            </div>
+            <div class="emoji-bar"><span class="page-emoji">🍰</span></div>
+          </div>
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 10 -->
+        <div class="page" id="p10">
+          <div class="face front photo-face">
+            <div class="photo-slot"><img src="images/image10.jpeg" alt="Memory"
+                onerror="this.src='';this.parentElement.innerHTML='<span class=\'ph-cam\'>📷</span><p>Your Photo Here</p>'">
+            </div>
+            <div class="emoji-bar"><span class="page-emoji">🌈</span></div>
+          </div>
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 11 -->
+        <div class="page" id="p11">
+          <div class="face front photo-face">
+            <div class="photo-slot"><img src="images/image11.jpeg" alt="Memory"
+                onerror="this.src='';this.parentElement.innerHTML='<span class=\'ph-cam\'>📷</span><p>Your Photo Here</p>'">
+            </div>
+            <div class="emoji-bar"><span class="page-emoji">🦋</span></div>
+          </div>
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 12 -->
+        <div class="page" id="p12">
+          <div class="face front photo-face">
+            <div class="photo-slot"><img src="images/image12.jpeg" alt="Memory"
+                onerror="this.src='';this.parentElement.innerHTML='<span class=\'ph-cam\'>📷</span><p>Your Photo Here</p>'">
+            </div>
+            <div class="emoji-bar"><span class="page-emoji">🎶</span></div>
+          </div>
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 13 -->
+        <div class="page" id="p13">
+          <div class="face front photo-face">
+            <div class="photo-slot"><img src="images/image13.jpeg" alt="Memory"
+                onerror="this.src='';this.parentElement.innerHTML='<span class=\'ph-cam\'>📷</span><p>Your Photo Here</p>'">
+            </div>
+            <div class="emoji-bar"><span class="page-emoji">🌙</span></div>
+          </div>
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 14 -->
+        <div class="page" id="p14">
+          <div class="face front photo-face">
+            <div class="photo-slot"><img src="images/image14.jpeg" alt="Memory"
+                onerror="this.src='';this.parentElement.innerHTML='<span class=\'ph-cam\'>📷</span><p>Your Photo Here</p>'">
+            </div>
+            <div class="emoji-bar"><span class="page-emoji">💖</span></div>
+          </div>
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 15 — Apology -->
+        <div class="page" id="p15">
+          <div class="face front kraft-face" style="text-align:center; padding: 24px; display: flex; align-items: center; justify-content: center;">
+            <p id="apologyText" style="font-family: var(--font-script); font-size: clamp(1.4rem, 6vw, 1.8rem); color: var(--text-dark); line-height: 1.6; font-weight: 700;"></p>
+          </div>
+          <div class="face back blank-face"></div>
+        </div>
+
+        <!-- PAGE 16 — BACK COVER -->
+        <div class="page" id="p16">
+          <div class="face front back-cover-face">
+            <div class="bc-spiral" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="bc-body">
+              <div class="cc tl"></div>
+              <div class="cc tr"></div>
+              <div class="cc bl"></div>
+              <div class="cc br"></div>
+              <div class="bc-inner">
+                <div class="bc-icon">🎀</div>
+                <p class="bc-label">Birthday Memories</p>
+                <p class="bc-date">01 April 2026</p>
+                <p class="bc-made">Made with 💛 just for you</p>
+              </div>
+            </div>
+          </div>
+          <div class="face back back-end-face">
+            <div class="be-glow"></div>
+          </div>
+        </div>
+
+      </div><!-- /book -->
+    </div><!-- /book-wrap -->
+
+    <!-- ══ NAV BUTTONS ══ -->
+    <div class="nav-row" id="navRow">
+      <button class="nav-btn" id="prevBtn" disabled aria-label="Previous page">
+        <img src="images/prev.png" alt="Previous" onerror="this.parentElement.classList.add('btn-fb');this.remove()">
+        <span class="fb-txt">◀ PREV</span>
+      </button>
+      <span class="nav-lbl" id="navLbl">Cover</span>
+      <button class="nav-btn" id="nextBtn" aria-label="Next page">
+        <img src="images/next.png" alt="Next" onerror="this.parentElement.classList.add('btn-fb');this.remove()">
+        <span class="fb-txt">NEXT ▶</span>
+      </button>
+    </div>
+
+    <!-- Music toggle -->
+    <button class="music-btn" id="musicBtn" aria-label="Toggle music">🎵</button>
+
+  </div><!-- /albumScene -->
+
+  <!-- ══ FINAL OVERLAY ══ -->
+  <div id="finalOverlay">
+    <div class="fo-bg"></div>
+    <div class="fo-box">
+      <div class="fo-top">🎈 🎉 🎈 🎂 🎈 🎉 🎈</div>
+      <div class="fo-stars">✨ 🌟 ✨</div>
+      <h2 class="fo-title">To the Birthday Girl…</h2>
+      <div class="fo-msg-box">
+        <p id="foTxt"></p><span class="fo-cur">|</span>
+      </div>
+      <div class="fo-sig">
+        <span>💕 💛 💕</span>
+        <p>— Your Friend Forever 🌸</p>
+      </div>
+      <button id="foBack">📖 Back to Album</button>
+    </div>
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="bgMusic" loop src="audio/bg-music.mp3"></audio>
+  <audio id="flipAudio" src="audio/page_turning.mp3"></audio>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
